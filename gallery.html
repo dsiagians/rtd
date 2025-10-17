@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Football Club</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            <img src="rtd.jpeg" alt="Club Logo">
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="formation.html">Formation</a></li>
+            <li><a href="players.html">Players</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="inventory.html">Inventory</a></li>
+            <li><a href="register.html">Register</a></li>
+        </ul>
+    </nav>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <h1>Photo Gallery</h1>
+
+        <!-- Gallery Categories -->
+        <div class="gallery-categories">
+            <button class="category-btn active" data-category="all">All</button>
+            <button class="category-btn" data-category="matches">Matches</button>
+            <button class="category-btn" data-category="training">Training</button>
+            <button class="category-btn" data-category="events">Events</button>
+        </div>
+
+        <!-- 3D Gallery Carousel -->
+        <div class="swiper-container gallery-carousel">
+            <div class="swiper-wrapper">
+                <!-- Gallery items will be loaded here dynamically -->
+            </div>
+            <!-- Add Navigation -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+
+        <!-- Lightbox -->
+        <div id="lightbox" class="lightbox">
+            <span class="close-lightbox">&times;</span>
+            <img id="lightbox-img" src="" alt="Enlarged image">
+            <div class="lightbox-caption"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Football Club. All rights reserved.<a href="https://www.youtube.com/watch?v=ARe-jd9McY8" target="_blank">Watch our journey</a> | <a href="https://www.instagram.com/rtd_footballclub" target="_blank">Follow us on Instagram</a></p></p>
+    </footer>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/js/gallery.js"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Club Website</title>
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Three.js for 3D animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- Swiper.js for 3D Carousel -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            <img src="rtd.jpeg" alt="Club Logo" style="width: 250px; height: 75px;">
+        </div>
+        <div class="search-box">
+            <input type="text" placeholder="Search..." id="searchInput">
+            <div id="searchSuggestions" class="suggestions"></div>
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="formation.html">Formation</a></li>
+            <li><a href="players.html">Players</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="inventory.html">Inventory</a></li>
+            <li><a href="register.html">Register</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="club-info">
+            <h1>RTD FC</h1>
+            <p class="tagline">Est. 2007 - Metro Jaya's Pride</p>
+        </div>
+    </header>
+
+    <!-- History Section -->
+    <section class="history">
+        <h2>Club History</h2>
+        <div class="history-content">
+            <p>RTD Football Club Metro Jaya was established in 2007 with the vision of becoming one of the leading football clubs in the Metro Jaya region. 
+                The club was founded by a group of football enthusiasts who wanted to create a platform for local talent to shine.
+               Starting from humble beginnings in local competitions, the club has grown significantly over the years, developing both its infrastructure and player development programs. 
+               The club's signature black and gold colors represent excellence and prestige, while the three stars above the logo symbolize our core values: Respect, Teamwork, and Dedication.</p>
+        </div>
+    </section>
+
+    <!-- Vision & Mission -->
+    <section class="vision-mission">
+        <div class="vision">
+            <h2>Vision</h2>
+            <p>Today, RTD FC continues to be a symbol of footballing excellence in Metro Jaya, 
+                focusing on developing local talent and contributing to the community through various football development programs.</p>
+        </div>
+        <div class="mission">
+            <h2>Major Achievements</h2>
+            <ul>
+                <li>Kapolda Cup (2015)</li>
+                <li>Kapolri Cup (2018)</li>
+                <li>Piala President (2022)</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Starting Lineup Preview -->
+    <section class="lineup-preview">
+        <h2>Current Starting Lineup</h2>
+        <div class="formation-display"style="justify-content: center; display: flex;">
+            <img src="team2.jpeg" width="40%" alt="">
+            <img src="team1.jpeg" width="40%" alt="">
+            <!-- 3D Formation will be rendered here using Three.js -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Football Club. All rights reserved.<a href="https://www.youtube.com/watch?v=ARe-jd9McY8" target="_blank">Watch our journey</a> | <a href="https://www.instagram.com/rtd_footballclub" target="_blank">Follow us on Instagram</a></p></p>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/search.js"></script>
+    <script src="assets/js/formation.js"></script>
+</body>
+</html>
