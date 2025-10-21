@@ -12,7 +12,12 @@
         <div class="logo">
             <img src="rtd.jpeg" alt="Club Logo">
         </div>
-        <ul>
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul id="navMenu">
             <li><a href="index.html">Home</a></li>
             <li><a href="formation.html">Formation</a></li>
             <li><a href="players.html">Players</a></li>
@@ -21,6 +26,7 @@
             <li><a href="register.html">Register</a></li>
         </ul>
     </nav>
+    <div class="nav-overlay" id="navOverlay"></div>
 
     <!-- Inventory Section -->
     <section class="inventory-section">
@@ -100,6 +106,7 @@
         <p><a href="https://www.youtube.com/watch?v=ARe-jd9McY8" target="_blank">Watch our journey</a> | <a href="https://www.instagram.com/rtd_footballclub" target="_blank">Follow us on Instagram</a></p>
     </footer>
 
+    <script src="assets/js/mobile-menu.js"></script>
     <script src="assets/js/inventory.js"></script>
     <script src="assets/js/responsive.js"></script>
 </body>

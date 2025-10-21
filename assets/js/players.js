@@ -38,51 +38,78 @@ const players = [
 ];
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize Swiper
-    const swiper = new Swiper('.swiper-container', {
-        effect: 'coverflow',
-        grabCursor: true,
-        centeredSlides: true,
-        slidesPerView: 'auto',
-        loop: true, // Enable continuous loop
-        autoplay: {
-            delay: 3000, // 3 seconds delay between slides
-            disableOnInteraction: false, // Continue autoplay after user interaction
-        },
-        coverflowEffect: {
-            rotate: 50,
-            stretch: 0,
-            depth: 100,
-            modifier: 1,
-            slideShadows: true,
-        },
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true, // Make pagination clickable
-        },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        }
-    });
-
-    // Load players into carousel
+    // Load players into carousel BEFORE initializing Swiper for proper sizing
     const swiperWrapper = document.querySelector('.swiper-wrapper');
-    
+
     players.forEach(player => {
         const slide = document.createElement('div');
         slide.className = 'swiper-slide';
         slide.innerHTML = `
             <div class="player-card">
-                <img src="${player.image}" alt="${player.name}">
+                <img src="${player.image}" alt="${player.name}" loading="lazy">
                 <h3>${player.name}</h3>
                 <p>Number: ${player.number}</p>
                 <p>Position: ${player.position}</p>
             </div>
-    }`;
-        
+        `;
+
         slide.addEventListener('click', () => showPlayerDetails(player));
         swiperWrapper.appendChild(slide);
+    });
+
+    // Initialize Swiper after slides are added
+    const swiper = new Swiper('.swiper-container', {
+        effect: 'coverflow',
+        grabCursor: true,
+        centeredSlides: true,
+        loop: true,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+        slidesPerView: 3,
+        spaceBetween: 24,
+        coverflowEffect: {
+            rotate: 40,
+            stretch: 0,
+            depth: 120,
+            modifier: 1,
+            slideShadows: false,
+        },
+        breakpoints: {
+            0: {
+                slidesPerView: 1,
+                spaceBetween: 12,
+                coverflowEffect: { rotate: 20, depth: 60, slideShadows: false }
+            },
+            480: {
+                slidesPerView: 1.2,
+                spaceBetween: 16,
+                coverflowEffect: { rotate: 24, depth: 80, slideShadows: false }
+            },
+            640: {
+                slidesPerView: 1.6,
+                spaceBetween: 18
+            },
+            768: {
+                slidesPerView: 2,
+                spaceBetween: 20
+            },
+            1024: {
+                slidesPerView: 3,
+                spaceBetween: 24
+            }
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        observer: true,
+        observeParents: true
     });
 });
 
