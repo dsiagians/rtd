@@ -111,3 +111,226 @@
     border-top: 2px dashed #FFD700;
     opacity: 0.6;
 }
+
+/* Players List Styles */
+.players-list {
+    margin: 1rem 0;
+}
+
+.players-list p {
+    padding: 0.5rem;
+    margin: 0.3rem 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-left: 3px solid #FFD700;
+    border-radius: 3px;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN FOR FORMATION PAGE
+   ======================================== */
+
+/* Tablet (max-width: 1024px) */
+@media screen and (max-width: 1024px) {
+    .formation-container {
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1.5rem;
+    }
+
+    .formation-display {
+        width: 100%;
+        min-height: 500px;
+        padding: 1.5rem;
+    }
+
+    .lineup-info {
+        width: 100%;
+        padding: 1.5rem;
+    }
+
+    .formation-section h1 {
+        font-size: 2rem;
+    }
+
+    .lineup-info h2 {
+        font-size: 1.5rem;
+    }
+
+    .player-position {
+        width: 70px;
+        height: 70px;
+    }
+
+    .player-position img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .player-position .player-name {
+        font-size: 0.8em;
+    }
+}
+
+/* Mobile (max-width: 768px) */
+@media screen and (max-width: 768px) {
+    .formation-section {
+        padding: 1rem 0.5rem;
+    }
+
+    .formation-section h1 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+
+    .formation-container {
+        padding: 0.5rem;
+        gap: 1rem;
+    }
+
+    .formation-display {
+        min-height: 400px;
+        padding: 1rem;
+        border-radius: 8px;
+    }
+
+    .formation-name {
+        font-size: 1rem;
+        padding: 0.4rem;
+    }
+
+    .pitch-layout {
+        min-height: 350px;
+    }
+
+    .player-position {
+        width: 60px;
+        height: 60px;
+    }
+
+    .player-position img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .player-position .player-name {
+        font-size: 0.7em;
+        margin-top: 3px;
+    }
+
+    .lineup-info {
+        padding: 1rem;
+    }
+
+    .lineup-info h2 {
+        font-size: 1.3rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .players-list p {
+        font-size: 0.9rem;
+        padding: 0.4rem;
+    }
+
+    .coach-info {
+        margin-top: 1.5rem;
+        padding: 0.8rem;
+    }
+
+    .coach-info p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Small Mobile (max-width: 480px) */
+@media screen and (max-width: 480px) {
+    .formation-section {
+        padding: 0.5rem;
+    }
+
+    .formation-section h1 {
+        font-size: 1.5rem;
+    }
+
+    .formation-container {
+        padding: 0.3rem;
+    }
+
+    .formation-display {
+        min-height: 350px;
+        padding: 0.8rem;
+    }
+
+    .formation-name {
+        font-size: 0.9rem;
+        padding: 0.3rem;
+    }
+
+    .pitch-layout {
+        min-height: 300px;
+    }
+
+    .player-position {
+        width: 50px;
+        height: 50px;
+    }
+
+    .player-position img {
+        width: 35px;
+        height: 35px;
+        border-width: 1.5px;
+    }
+
+    .player-position .player-name {
+        font-size: 0.6em;
+        margin-top: 2px;
+    }
+
+    .lineup-info {
+        padding: 0.8rem;
+    }
+
+    .lineup-info h2 {
+        font-size: 1.2rem;
+    }
+
+    .players-list p {
+        font-size: 0.85rem;
+        padding: 0.3rem;
+        border-left-width: 2px;
+    }
+
+    .coach-info {
+        margin-top: 1rem;
+        padding: 0.6rem;
+    }
+
+    .coach-info p {
+        font-size: 0.85rem;
+    }
+}
+
+/* Landscape Mobile */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    .formation-section {
+        padding: 0.5rem;
+    }
+
+    .formation-container {
+        flex-direction: row;
+    }
+
+    .formation-display {
+        flex: 2;
+        min-height: 300px;
+    }
+
+    .lineup-info {
+        flex: 1;
+        max-height: 400px;
+        overflow-y: auto;
+    }
+
+    .pitch-layout {
+        min-height: 250px;
+    }
+}
