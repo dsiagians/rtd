@@ -2,10 +2,30 @@
 const galleryImages = [
     {
         id: 1,
-        src: 'assets/images/gallery/match1.jpg',
+        src: 'melky.jpeg',
         category: 'matches',
-        caption: 'Victory Match 2025'
+        caption: 'Best GoalKeeper 2025'
     },
+    {
+        src: 'fajri.jpeg',
+        category: 'training',
+        caption: 'defender in action'
+    },
+    {
+        src: 'ekos.jpeg',
+        category: 'events',
+        caption: 'midfielder celebration'
+    },
+    {
+        src: 'febri.jpeg',
+        category: 'training',
+        caption: 'defender training hard'
+    },
+    {
+        src: 'jimris.jpeg',
+        category: 'events',
+        caption: ' striker scoring goal'
+    }
     // Add more images here
 ];
 
