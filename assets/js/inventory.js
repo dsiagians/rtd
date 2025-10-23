@@ -7,6 +7,12 @@ let inventory = [
         quantity: 3,
         condition: 'new'
     },
+    {
+        name: 'jersey',
+        category: 'uniform',
+        quantity: 12,
+        condition: 'used'
+    },
     // Add more items here
 ];
 
