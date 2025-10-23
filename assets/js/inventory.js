@@ -4,7 +4,7 @@ let inventory = [
         id: 1,
         name: 'Match Ball',
         category: 'equipment',
-        quantity: 20,
+        quantity: 3,
         condition: 'new'
     },
     // Add more items here
