@@ -26,11 +26,12 @@
             <li><a href="inventory.html">Inventory</a></li>
         </ul>
     </nav>
+
     <div class="nav-overlay" id="navOverlay"></div>
 
     <!-- Gallery Section -->
     <section class="gallery-section">
-        <h1>Photo Gallery</h1>
+        <h1>Photo & Video Gallery</h1>
 
         <!-- Gallery Categories -->
         <div class="gallery-categories">
@@ -42,10 +43,8 @@
 
         <!-- 3D Gallery Carousel -->
         <div class="swiper-container gallery-carousel">
-            <div class="swiper-wrapper">
-                <!-- Gallery items will be loaded here dynamically -->
-            </div>
-            <!-- Add Navigation -->
+            <div class="swiper-wrapper"></div>
+
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
             <div class="swiper-pagination"></div>
@@ -54,7 +53,16 @@
         <!-- Lightbox -->
         <div id="lightbox" class="lightbox">
             <span class="close-lightbox">&times;</span>
-            <img id="lightbox-img" src="" alt="Enlarged image">
+
+            <!-- IMAGE -->
+            <img id="lightbox-img" src="" alt="Lightbox Image" style="display:none;">
+
+            <!-- VIDEO -->
+            <video id="lightbox-video" controls style="display:none; max-height:80vh;">
+                <source type="video/mp4">
+                <source type="video/quicktime">
+            </video>
+
             <div class="lightbox-caption"></div>
         </div>
     </section>
@@ -62,7 +70,10 @@
     <!-- Footer -->
     <footer>
         <p>&copy; Design By Melky_Siagian 2025 Football Club. All rights reserved.</p>
-        <p><a href="https://www.youtube.com/watch?v=ARe-jd9McY8" target="_blank">Watch our journey</a> | <a href="https://www.instagram.com/rtd_footballclub" target="_blank">Follow us on Instagram</a></p>
+        <p>
+            <a href="https://www.youtube.com/watch?v=ARe-jd9McY8" target="_blank">Watch our journey</a> |
+            <a href="https://www.instagram.com/rtd_footballclub" target="_blank">Follow us on Instagram</a>
+        </p>
     </footer>
 
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>

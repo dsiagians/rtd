@@ -1006,6 +1006,89 @@ input::placeholder {
         padding: 20px;
     }
 }
+/* ============================
+   VIDEO STYLES FOR GALLERY
+   ============================ */
+
+/* Video dalam slider (Swiper) */
+.gallery-video {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid #FFD700;
+    cursor: pointer;
+    background: black;
+}
+
+/* Hover efek video */
+.gallery-video:hover {
+    filter: brightness(1.1);
+    transform: scale(1.02);
+    transition: 0.3s ease;
+}
+
+/* Lightbox video */
+#lightbox-video {
+    max-width: 90%;
+    max-height: 85vh;
+    border-radius: 10px;
+    border: 2px solid #FFD700;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: black;
+}
+
+/* Caption styling */
+.lightbox-caption {
+    text-align: center;
+    color: #FFD700;
+    margin-top: 20px;
+    font-size: 1.2rem;
+}
+
+/* Close button hover */
+.close-lightbox:hover {
+    color: #FFD700;
+    transform: scale(1.2);
+    transition: 0.2s;
+}
+
+/* Responsive video mobile */
+@media screen and (max-width: 768px) {
+    .gallery-video {
+        height: 200px;
+    }
+
+    #lightbox-video {
+        max-width: 95%;
+        max-height: 70vh;
+    }
+
+    .lightbox-caption {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .gallery-video {
+        height: 180px;
+    }
+
+    #lightbox-video {
+        max-width: 98%;
+        max-height: 65vh;
+    }
+
+    .lightbox-caption {
+        font-size: 0.9rem;
+        padding: 0 10px;
+    }
+}
+
 
 /* Print Styles */
 @media print {

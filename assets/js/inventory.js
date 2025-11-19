@@ -1,3 +1,4 @@
+
 // Sample inventory data
 let inventory = [
     {

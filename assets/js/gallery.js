@@ -1,45 +1,62 @@
-// Sample gallery data
+// Sample gallery data 
 const galleryImages = [
     {
         id: 1,
         src: 'melky.jpeg',
         category: 'matches',
-        caption: 'Best GoalKeeper 2025'
+        caption: 'Best GoalKeeper 2025',
+        type: 'image'
     },
     {
         src: 'fajri.jpeg',
         category: 'training',
-        caption: 'defender in action'
+        caption: 'defender in action',
+        type: 'image'
     },
     {
         src: 'ekos.jpeg',
         category: 'events',
-        caption: 'midfielder celebration'
+        caption: 'midfielder celebration',
+        type: 'image'
     },
     {
         src: 'febri.jpeg',
         category: 'training',
-        caption: 'defender training hard'
+        caption: 'defender training hard',
+        type: 'image'
     },
     {
         src: 'jimris.jpeg',
         category: 'events',
-        caption: ' striker scoring goal'
+        caption: 'striker scoring goal',
+        type: 'image'
+    },
+    {
+        src: 'team3.jpg',
+        category: 'event',
+        caption: 'rtd vs dir 4',
+        type: 'image'
+    },
+
+    // ⭐ Tambahan Video
+    {
+        src: 'jupri.MOV',     // ganti sesuai nama file Anda
+        category: 'events',
+        caption: 'Match Highlight Video',
+        type: 'video'
     }
-    // Add more images here
 ];
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize Swiper
     const swiper = new Swiper('.gallery-carousel', {
         effect: 'coverflow',
         grabCursor: true,
         centeredSlides: true,
         slidesPerView: 'auto',
-        loop: true, // Enable continuous loop
+        loop: true,
         autoplay: {
-            delay: 3000, // 3 seconds delay between slides
-            disableOnInteraction: false, // Continue autoplay after user interaction
+            delay: 3000,
+            disableOnInteraction: false,
         },
         coverflowEffect: {
             rotate: 50,
@@ -57,10 +74,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Load initial gallery
     loadGallery('all');
 
-    // Category buttons
     const categoryButtons = document.querySelectorAll('.category-btn');
     categoryButtons.forEach(button => {
         button.addEventListener('click', function() {
@@ -79,36 +94,66 @@ function loadGallery(category) {
         ? galleryImages 
         : galleryImages.filter(img => img.category === category);
 
-    filteredImages.forEach(image => {
+    filteredImages.forEach(item => {
         const slide = document.createElement('div');
         slide.className = 'swiper-slide';
-        slide.innerHTML = `
-            <img src="${image.src}" alt="${image.caption}" 
-                 onclick="openLightbox('${image.src}', '${image.caption}')">
-            <div class="image-caption">${image.caption}</div>
-        `;
+
+        // Jika item adalah VIDEO
+        if (item.type === "video") {
+            slide.innerHTML = `
+                <video class="gallery-video" muted onclick="openLightbox('${item.src}', '${item.caption}', 'video')">
+                    <source src="${item.src}" type="video/mp4">
+                    <source src="${item.src}" type="video/quicktime">
+                </video>
+                <div class="image-caption">${item.caption}</div>
+            `;
+        } 
+        // Jika item adalah GAMBAR
+        else {
+            slide.innerHTML = `
+                <img src="${item.src}" alt="${item.caption}" 
+                     onclick="openLightbox('${item.src}', '${item.caption}', 'image')">
+                <div class="image-caption">${item.caption}</div>
+            `;
+        }
         swiperWrapper.appendChild(slide);
     });
 }
 
-function openLightbox(src, caption) {
+function openLightbox(src, caption, type) {
     const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const lightboxCaption = document.querySelector('.lightbox-caption');
+    const img = document.getElementById('lightbox-img');
+    const video = document.getElementById('lightbox-video');
+    const cap = document.querySelector('.lightbox-caption');
 
-    lightboxImg.src = src;
-    lightboxCaption.textContent = caption;
+    // Reset tampilan
+    img.style.display = 'none';
+    video.style.display = 'none';
+
+    if (type === "image") {
+        img.src = src;
+        img.style.display = 'block';
+    } else {
+        video.src = src;
+        video.style.display = 'block';
+    }
+
+    cap.textContent = caption;
     lightbox.style.display = 'block';
 }
 
 // Close lightbox
 document.querySelector('.close-lightbox').addEventListener('click', function() {
+    const video = document.getElementById('lightbox-video');
+    video.pause();
     document.getElementById('lightbox').style.display = 'none';
 });
 
-// Close lightbox when clicking outside the image
+// Close when clicking outside
 document.getElementById('lightbox').addEventListener('click', function(e) {
+    const video = document.getElementById('lightbox-video');
     if (e.target === this) {
+        video.pause();
         this.style.display = 'none';
     }
 });
