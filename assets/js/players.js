@@ -34,7 +34,55 @@ const players = [
         number: 7,
         position: "Midfielder",
         image: "febri.jpeg"
-    }
+    },
+    {
+        id: 6,
+        name: "Ase",
+        number: 9,
+        position: "Forward",
+        image: "ase.jpg"
+    },
+    {   id: 7,
+        name: "Fadli",
+        number: 3,
+        position: "Midfielder",
+        image: "fadli2.jpg"
+    },
+    {
+        id: 8,
+        name: "Fandri",
+        number: 6,
+        position: "Midfielder",
+        image: "fandri2.jpg"
+    },
+    {
+        id: 9,
+        name: "GusPoer",
+        number: 4,
+        position: "Defender",
+        image: "guspur.jpg"
+    },
+    {
+        id: 10,
+        name: "Hendra Joy",
+        number: 5,
+        position: "Defender",
+        image: "hendra.jpg"
+    },
+    {
+        id: 11,
+        name: "Jupri",
+        number: 11,
+        position: "Forward",
+        image: "jupri1.jpg"
+    },
+    {
+        id: 12,
+        name: "Yudho",
+        number: 13,
+        position: "Defender",
+        image: "yudo2.jpg"
+    },
 ];
 
 document.addEventListener('DOMContentLoaded', function() {
