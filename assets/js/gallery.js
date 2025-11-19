@@ -42,7 +42,7 @@ const galleryImages = [
     {
         src: 'jupri.MOV',     // ganti sesuai nama file Anda
         category: 'events',
-        caption: 'Match Highlight Video',
+        caption: 'Mr Jupri Penalty',
         type: 'video'
     }
 ];
