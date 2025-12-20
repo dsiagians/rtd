@@ -127,30 +127,35 @@ document.addEventListener('DOMContentLoaded', function() {
         breakpoints: {
             0: {
                 slidesPerView: 1,
-                spaceBetween: 12,
-                coverflowEffect: { rotate: 20, depth: 60, slideShadows: false }
+                spaceBetween: 10,
+                coverflowEffect: { rotate: 0, depth: 0, slideShadows: false }
             },
-            480: {
-                slidesPerView: 1.2,
-                spaceBetween: 16,
-                coverflowEffect: { rotate: 24, depth: 80, slideShadows: false }
+            400: {
+                slidesPerView: 1.15,
+                spaceBetween: 12,
+                coverflowEffect: { rotate: 10, depth: 30, slideShadows: false }
             },
             640: {
-                slidesPerView: 1.6,
-                spaceBetween: 18
+                slidesPerView: 1.5,
+                spaceBetween: 18,
+                coverflowEffect: { rotate: 20, depth: 60, slideShadows: false }
             },
             768: {
                 slidesPerView: 2,
-                spaceBetween: 20
+                spaceBetween: 20,
+                coverflowEffect: { rotate: 30, depth: 80, slideShadows: false }
             },
             1024: {
                 slidesPerView: 3,
-                spaceBetween: 24
+                spaceBetween: 24,
+                coverflowEffect: { rotate: 40, depth: 120, slideShadows: false }
             }
         },
         pagination: {
             el: '.swiper-pagination',
             clickable: true,
+            dynamicBullets: true,
+            dynamicMainBullets: 5
         },
         navigation: {
             nextEl: '.swiper-button-next',
@@ -165,7 +170,7 @@ function showPlayerDetails(player) {
     const detailsDiv = document.getElementById('playerDetails');
     detailsDiv.innerHTML = `
         <h2>${player.name}</h2>
-        <img src="${player.image}" alt="${player.name}" style="max-width: 300px;">
+        <img src="${player.image}" alt="${player.name}" class="player-detail-img">
         <div class="player-info">
             <p><strong>Number:</strong> ${player.number}</p>
             <p><strong>Position:</strong> ${player.position}</p>
