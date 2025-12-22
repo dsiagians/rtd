@@ -1,11 +1,11 @@
 // Responsive utilities for RTD Football Club Website
-document.addEventListener('DOMContentLoaded', function() {
-    
+document.addEventListener('DOMContentLoaded', function () {
+
     // Handle window resize
     let resizeTimer;
-    window.addEventListener('resize', function() {
+    window.addEventListener('resize', function () {
         clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(function() {
+        resizeTimer = setTimeout(function () {
             adjustLayoutForScreenSize();
         }, 250);
     });
@@ -14,26 +14,20 @@ document.addEventListener('DOMContentLoaded', function() {
     adjustLayoutForScreenSize();
 
     // Handle orientation change
-    window.addEventListener('orientationchange', function() {
+    window.addEventListener('orientationchange', function () {
         setTimeout(adjustLayoutForScreenSize, 100);
     });
 });
 
 function adjustLayoutForScreenSize() {
     const width = window.innerWidth;
-    
-    // Adjust swiper slides for different screen sizes
-    const swiperSlides = document.querySelectorAll('.swiper-slide');
-    if (swiperSlides.length > 0) {
-        swiperSlides.forEach(slide => {
-            if (width <= 480) {
-                slide.style.width = '90%';
-            } else if (width <= 768) {
-                slide.style.width = '80%';
-            } else {
-                slide.style.width = '300px';
-            }
-        });
+
+    // Let Swiper handle its own responsive sizing via breakpoints
+    // We just need to trigger a resize update if swiper exists
+    const swiperContainer = document.querySelector('.swiper-container');
+    if (swiperContainer && swiperContainer.swiper) {
+        // Trigger Swiper to recalculate after resize
+        swiperContainer.swiper.update();
     }
 
     // Adjust table overflow on mobile
